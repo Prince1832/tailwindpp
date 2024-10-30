@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind-Project: This is single page website!</title>
+  <meta name="description"
+    content="This is single page website which is created using with HTML, CSS and JavaScript." />
+  <meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com/" crossorigin />
+  <link rel="preload" as="image" href="https://example.com/images/main-home.jpg" />
+
+  <!-- Open Graph meta tags for social sharing -->
+  <meta property="og:title" content="Tailwind-Project: This is single page website!" />
+  <meta property="og:description"
+    content="This is single page website which is created using with HTML, CSS and JavaScript." />
+  <meta property="og:url" content="http://127.0.0.1:5500/index.html" />
+  <link rel="canonical" href="http://127.0.0.1:5500/index.html" />
+
+  <!-- Twitter Card meta tags for Twitter sharing -->
+  <meta name="twitter:title" content="Tailwind-Project: This is single page website!" />
+  <meta name="twitter:description"
+    content="This is single page website which is created using with HTML, CSS and JavaScript!" />
+  <meta property="og:image" content="https://example.com/images/main-home.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image:width" content="2400" />
+  <meta property="og:image:height" content="1260" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@rhosigma" />
+  <meta name="twitter:image" content="https://example.com/images/main-home.jpg" />
+  <meta name="theme-color" content="#2E5BAB" />
+  <link rel="icon" type="image/png" href="/images/favicon.ico" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        "gtm.start": new Date().getTime(),
+        event: "gtm.js",
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      // j.type = "text/partytown"
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-XX-XXX");
+  </script>
+  <!-- End Google Tag Manager -->
+</head>
+
+<body class="h-100% bg-[#F1F0F0]">
+  <div class="w-full h-screen bg-cover bg-no-repeat rounded-md overflow-hidden relative"
+    style="background-image: url(images/main-home.jpg)">
+    <nav class="lg:grid lg:grid-cols-3 py-5 custom-container md:flex">
+      <div class="flex items-center">
+        <img class="w-7" src="/images/logo.png" alt="logo" />
+        <li class="mx-4 text-white list-none">Lofi</li>
+      </div>
+
+      <div class="hidden md:block">
+        <ul class="flex justify-center bg-neutral-200 rounded-full items-center min-w-[498px]">
+          <li class="px-6 border rounded-full bg-white px-11 py-2 text-black">
+            Service
+          </li>
+
+          <li class="px-6 text-white cursor-pointer hover:text-black">Why Us</li>
+          <li class="px-6 text-white cursor-pointer hover:text-black">Testimonial</li>
+          <li class="px-6 text-white cursor-pointer hover:text-black">FAQ</li>
+          <li class="px-6 text-white cursor-pointer hover:text-black">About</li>
+        </ul>
+      </div>
+      <div class="hamburger inline-block p-4 cursor-pointer md:hidden absolute top-[10px] right-[20px]" id="hamburger">
+        <div class="line h-0.5 w-6 my-1 bg-white"></div>
+        <div class="line h-0.5 w-6 my-1 bg-white"></div>
+        <div class="line h-0.5 w-6 my-1 bg-white"></div>
+      </div>
+    </nav>
+
+    <div id="menu" class="hidden relative  transition-all ease-in duration-800">
+      <ul class="bg-neutral-200 flex flex-col items-center p-4 md:hidden w-full fixed top-0 h-full z-20 gap-7">
+        <li class="px-6 py-2 text-black"><a href="#">Service</a></li>
+        <li class="px-6 py-2 text-black"><a href="#">Why Us</a></li>
+        <li class="px-6 py-2 text-black"><a href="#">Testimonial</a></li>
+        <li class="px-6 py-2 text-black"><a href="#faq">FAQ</a></li>
+        <li class="px-6 py-2 text-black"><a href="#">About</a></li>
+        <img src="images/close.png" id="closeIcon" class="close h-[20px] w-[20px] absolute top-10 right-10 z-20" />
+      </ul>
+    </div>
+
+    <div class="custom-container flex flex-col lg:gap-[200px] md:gap-[90px] gap-[50px]">
+      <h1
+        class="text-white md:custom-container lg:text-[63px] md:text-[43px] text-[27px] lg:w-[60%] md:w-[65%] w-full text-center md:text-left mt-[20px]">
+        We spend one-third of our life at work
+      </h1>
+
+      <p class="text-white md:text-[25px] text-[18px] lg:w-[25%] md:w-[30%] w-full text-center md:text-left">
+        See the world through the prism of design
+      </p>
+    </div>
+
+    <div
+      class="side-section bg-white h-[33%] absolute right-0 bottom-0 md:w-[60%] lg:w-[55%] w-full rounded-t-lg flex justify-center items-center sm:gap-[100px] md:gap-[100px] lg:gap-[150px] gap-[30px]">
+      <div class="w-[55px] side-section1">
+        <p class="md:text-[35px] text-[20px] text-[#0B5A3B]">20+</p>
+        <p class="text-[13px] md:text-[16px] lg:w-[132px]">Total Project</p>
+      </div>
+      <div class="w-[55px] side-section2">
+        <p class="md:text-[35px] text-[20px] text-[#0B5A3B]">4.8M</p>
+        <p class="text-[13px] md:text-[16px] lg:w-[132px]">Emission Saved</p>
+      </div>
+      <div class="w-[55px] side-section3">
+        <p class="md:text-[35px] text-[20px] text-[#0B5A3B]">60+</p>
+        <p class="text-[13px] md:text-[16px] lg:w-[132px]">
+          Strategic Partner
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <section class="grid md:grid-cols-2 custom-container md:m-16 mt-[80px!important] md:gap-10">
+    <div class="box1 flex flex-col justify-between gap-[20px]">
+      <ul>
+        <li class="text-[12px] font-bold text-[#0B5A3B]">PROJECT 1</li>
+        <h3 class="md:text-[40px] text-[25px]">Bespoke Projects</h3>
+        <li>2023</li>
+      </ul>
+      <ul>
+        <li class="text-grey-600">
+          Lofi is a green tech industrial Investment company based in Sweden,
+          focusing on clean enery technology and industrial innovation, We
+          invest in various areas, including solar and wind parks.
+        </li>
+      </ul>
+
+      <div class="flex gap-[37px] justify-between w-full">
+        <div>
+          <p>Location</p>
+          <p class="md:font-bold font-[500]">Dartmoor, Devon</p>
+        </div>
+        <div>
+          <p>Size</p>
+          <p class="md:font-bold font-[500]">28m2</p>
+        </div>
+        <div>
+          <p>Materials</p>
+          <p class="md:font-bold font-[500]">Oak,Ash, Cooper</p>
+        </div>
+      </div>
+    </div>
+    <div class="box2 flex md:justify-self-end">
+      <img class="w-full h-96 rounded-md mt-5 md:mt-0 object-cover" src="images/home5.jpg" alt="home1Image" />
+    </div>
+  </section>
+  <hr class="custom-container mt-[50px!important]" />
+  <section class="grid md:grid-cols-2 custom-container md:m-16 mt-[50px!important] md:gap-10">
+    <div class="box1 flex flex-col justify-between gap-[20px]">
+      <ul>
+        <li class="text-[12px] font-bold text-[#0B5A3B]">PROJECT 2</li>
+        <h3 class="md:text-[40px] text-[25px]">Holly Water</h3>
+        <li>2023</li>
+      </ul>
+      <ul>
+        <li class="text-grey-600">
+          Lofi is a green tech industrial Investment company based in Sweden,
+          focusing on clean enery technology and industrial innovation, We
+          invest in various areas, including solar and wind parks.
+        </li>
+      </ul>
+
+      <div class="flex gap-[37px] justify-between w-full">
+        <div>
+          <p>Location</p>
+          <p class="md:font-bold font-[500]">Dartmoor, Devon</p>
+        </div>
+        <div>
+          <p>Size</p>
+          <p class="md:font-bold font-[500]">28m2</p>
+        </div>
+        <div>
+          <p>Materials</p>
+          <p class="md:font-bold font-[500]">Oak,Ash, Cooper</p>
+        </div>
+      </div>
+    </div>
+    <div class="box2 flex md:justify-self-end">
+      <img class="w-full h-96 rounded-md mt-5 md:mt-0 object-cover" src="images/home5.jpg" alt="home5Image" />
+    </div>
+  </section>
+  <hr class="custom-container mt-[50px!important]" />
+
+  <section class="grid md:grid-cols-2 custom-container md:m-16 mt-[50px!important] md:gap-10">
+    <div class="box1 flex flex-col justify-between gap-[20px]">
+      <ul>
+        <li class="text-[12px] font-bold text-[#0B5A3B]">PROJECT 3</li>
+        <h3 class="md:text-[40px] text-[25px]">Oak Cabin</h3>
+        <li>2023</li>
+      </ul>
+      <ul>
+        <li class="text-grey-600">
+          Lofi is a green tech industrial Investment company based in Sweden,
+          focusing on clean enery technology and industrial innovation, We
+          invest in various areas, including solar and wind parks.
+        </li>
+      </ul>
+
+      <div class="flex gap-[37px] justify-between w-full">
+        <div>
+          <p>Location</p>
+          <p class="md:font-bold font-[500]">Dartmoor, Devon</p>
+        </div>
+        <div>
+          <p>Size</p>
+          <p class="md:font-bold font-[500]">28m2</p>
+        </div>
+        <div>
+          <p>Materials</p>
+          <p class="md:font-bold font-[500]">Oak,Ash, Cooper</p>
+        </div>
+      </div>
+    </div>
+    <div class="box2 flex md:justify-self-end">
+      <img class="w-full h-96 rounded-md mt-5 md:mt-0 object-cover" src="images/home5.jpg" alt="home5Image" />
+    </div>
+  </section>
+
+  <section class="border bg-[white] rounded-[14px] mt-[30px]">
+    <div class="second-container custom-container md:m-16 h-full">
+      <p class="text-[#0B5A3B] text-[12px] font-[700] mt-[20px]">
+        FOCUS AREAS
+      </p>
+      <h2 class="font-[500] md:text-[40px] lg:w-[70%] mt-[10px]">
+        We partner with innovation businesses to fast-track a sustainable
+        future.
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-4 md:mt-9 justify-center mb-[30px]">
+        <div
+          class="grid border rounded-[15px] md:h-[380px] bg-[#065256] p-[50px] mt-[15px] flex justify-center items-center gap-[8px]">
+          <img src="images/water-waves.png" class="invert h-[50px]" />
+          <h4 class="md:text-[35px] text-[25px] text-white">Hydropower</h4>
+          <p class="text-white md:w-[85%]">
+            Harnessing water's force for clean energy, powering communities
+            sustainably with natural flow and renewable potential
+          </p>
+          <p class="flex items-center gap-1 text-white">
+            Learn More
+            <img class="h-[8px] invert" src="images/top-right.png" />
+          </p>
+        </div>
+
+        <div
+          class="grid border rounded-[15px] md:h-[380px] bg-[#B5E775] p-[50px] mt-[15px] flex justify-center items-center gap-[8px]">
+          <img src="images/wind (1).png" class="h-[50px]" />
+
+          <h4 class="md:text-[35px] text-[25px]">Wind Parks</h4>
+          <p class="md:w-[85%]">
+            Tapping into wind's limitless energy, creating vast sustainable
+            power sources to fuel a greener tomorrow.
+          </p>
+          <p class="flex items-center gap-1">
+            Learn More
+            <img class="h-[8px]" src="images/top-right.png" />
+          </p>
+        </div>
+
+        <div
+          class="grid border rounded-[15px] md:h-[380px] bg-[#FF986F] p-[50px] mt-[15px] flex justify-center items-center gap-[8px]">
+          <img src="images/power.png" />
+
+          <h4 class="md:text-[35px] text-[25px]">Batteries</h4>
+          <p class="md:w-[85%]">
+            Storing renewable energy efficiently, empowering seamless energy
+            access while reducing environmental impact.
+          </p>
+          <p class="flex items-center gap-1">
+            Learn More
+            <img class="h-[8px]" src="images/top-right.png" />
+          </p>
+        </div>
+
+        <div
+          class="grid border rounded-[15px] md:h-[380px] bg-[#33342E] p-[50px] mt-[15px] flex justify-center items-center gap-[8px]">
+          <img src="images/sunset.png" class="invert h-[50px]" />
+
+          <h4 class="md:text-[35px] text-[25px] w-[193px] text-white">
+            Solar Energy
+          </h4>
+          <p class="text-white w-[85%]">
+            Harvesting the sun's energy, transforming sunlight into clean,
+            reliable power for a brighter, sustainable future.
+          </p>
+          <p class="flex items-center gap-1 text-white">
+            Learn More
+            <img class="h-[8px] invert" src="images/top-right.png" />
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-[30px]">
+    <div class="third-container custom-container md:m-16">
+      <p class="text-[#0B5A3B] text-[12px] font-[700]">NEWS</p>
+      <h2 class="font-[500] md:text-[40px] text-[22px] lg:w-[70%]">
+        Insights and innovations in Green Technology and Environmental
+        Solutions.
+      </h2>
+
+      <div class="grid md:grid-cols-4 gap-4 mt-9">
+        <div class="bg-white rounded-lg">
+          <img class="rounded-t-lg" src="images/workingMan.jpg" />
+          <div class="w-[90%] m-auto flex flex-col gap-2">
+            <div class="flex items-center gap-2 py-2">
+              <img src="images/boy.png" class="h[30px] w-[30px]" />
+              <p>Brad Porter</p>
+            </div>
+            <hr class="w-full" />
+            <p class="font-bold w-[84%]">
+              Unleashinf Hydropower: A Sustainable Force Reshaping Energy
+              Landsca...
+            </p>
+            <p class="text-stone-400">
+              Porvide clients with strategic guidance on the use of
+              technolo...
+            </p>
+            <hr />
+            <ul class="flex gap-2 text-[#0B5A3B] py-2">
+              <li>12 May</li>
+              <li>,</li>
+              <li>6 Min</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg">
+          <img class="rounded-t-lg" src="images/solar1.jpg" />
+          <div class="w-[90%] m-auto flex flex-col gap-2">
+            <div class="flex items-center gap-2 py-2">
+              <img src="images/boy.png" class="h[30px] w-[30px]" />
+              <p>Brad Porter</p>
+            </div>
+            <hr class="w-full" />
+            <p class="font-bold w-[84%]">
+              Unleashinf Hydropower: A Sustainable Force Reshaping Energy
+              Landsca...
+            </p>
+            <p class="text-stone-400">
+              Porvide clients with strategic guidance on the use of
+              technolo...
+            </p>
+            <hr />
+            <ul class="flex gap-2 text-[#0B5A3B] py-2">
+              <li>12 May</li>
+              <li>,</li>
+              <li>6 Min</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg">
+          <img class="rounded-t-lg" src="images/solar1.jpg" />
+          <div class="w-[90%] m-auto flex flex-col gap-2">
+            <div class="flex items-center gap-2 py-2">
+              <img src="images/boy.png" class="h[30px] w-[30px]" />
+              <p>Brad Porter</p>
+            </div>
+            <hr class="w-full" />
+            <p class="font-bold w-[84%]">
+              Unleashinf Hydropower: A Sustainable Force Reshaping Energy
+              Landsca...
+            </p>
+            <p class="text-stone-400">
+              Porvide clients with strategic guidance on the use of
+              technolo...
+            </p>
+            <hr />
+            <ul class="flex gap-2 text-[#0B5A3B] py-2">
+              <li>12 May</li>
+              <li>,</li>
+              <li>6 Min</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg">
+          <img class="rounded-t-lg" src="images/wind.jpg" />
+          <div class="w-[90%] m-auto flex flex-col gap-2">
+            <div class="flex items-center gap-2 py-2">
+              <img src="images/boy.png" class="h[30px] w-[30px]" />
+              <p>Brad Porter</p>
+            </div>
+            <hr class="w-full" />
+            <p class="font-bold w-[84%]">
+              Unleashinf Hydropower: A Sustainable Force Reshaping Energy
+              Landsca...
+            </p>
+            <p class="text-stone-400">
+              Porvide clients with strategic guidance on the use of
+              technolo...
+            </p>
+            <hr />
+            <ul class="flex gap-2 text-[#0B5A3B] py-2">
+              <li>12 May</li>
+              <li>,</li>
+              <li>6 Min</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border bg-[white] rounded-[14px] mt-2" id="faq">
+    <div class="second-container custom-container md:m-16">
+      <p class="text-[#0B5A3B] text-[12px] text-center font-[700] mt-[30px]">
+        QUESTIONS
+      </p>
+      <p class="font-[500] md:text-[40px] text-[30px] md:text-center">
+        Frequently asked questions
+      </p>
+
+      <div class="faq md:w-[70%] m-auto mt-9 flex flex-col gap-4">
+        <div class="question text-[18px] font-[600] flex justify-between cursor-pointer" onclick="toggleAnswer(this)">
+          How will the money be received?
+          <div>
+            <img src="images/add.png" class="w-[22px] h-[22px] plus-icon" />
+            <img src="images/close.png" class="w-[14px] h-[14px] cross-icon hidden" />
+          </div>
+        </div>
+        <div class="answer text-stone-400 max-h-0 overflow-hidden transition-all duration-300">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque,
+          magnam aspernatur. Iste ab explicabo commodi ex laudantium voluptate
+          necessitatibus dicta ullam ducimus minima.
+        </div>
+        <hr />
+        <div class="question text-[18px] font-[600] flex justify-between cursor-pointer" onclick="toggleAnswer(this)">
+          What is an international money transfer?
+          <div>
+            <img src="images/add.png" class="w-[22px] h-[22px] plus-icon" />
+            <img src="images/close.png" class="w-[14px] h-[14px] cross-icon hidden" />
+          </div>
+        </div>
+        <div class="answer text-stone-400 max-h-0 overflow-hidden transition-all duration-300">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque,
+          magnam aspernatur. Iste ab explicabo commodi ex laudantium voluptate
+          necessitatibus dicta ullam ducimus minima.
+        </div>
+        <hr />
+        <div class="question text-[18px] font-[600] flex justify-between cursor-pointer" onclick="toggleAnswer(this)">
+          How do I send money to a bank account?
+          <div>
+            <img src="images/add.png" class="w-[22px] h-[22px] plus-icon" />
+            <img src="images/close.png" class="w-[14px] h-[14px] cross-icon hidden" />
+          </div>
+        </div>
+        <div class="answer text-stone-400 max-h-0 overflow-hidden transition-all duration-300">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque,
+          magnam aspernatur. Iste ab explicabo commodi ex laudantium voluptate
+          necessitatibus dicta ullam ducimus minima.
+        </div>
+        <hr />
+
+        <div class="question text-[18px] font-[600] flex justify-between cursor-pointer" onclick="toggleAnswer(this)">
+          What is an international money transfer?
+          <div>
+            <img src="images/add.png" class="w-[22px] h-[22px] plus-icon" />
+            <img src="images/close.png" class="w-[14px] h-[14px] cross-icon hidden" />
+          </div>
+        </div>
+        <div class="answer text-stone-400 max-h-0 overflow-hidden transition-all duration-300">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque,
+          magnam aspernatur. Iste ab explicabo commodi ex laudantium voluptate
+          necessitatibus dicta ullam ducimus minima.
+        </div>
+        <hr />
+      </div>
+
+      <p class="text-center md:mt-[20px] p-[13px] text-[17px]">
+        Visit our <b class="underline">help center</b> for more information
+      </p>
+    </div>
+  </section>
+
+  <section class="relative">
+    <div class="mt-2 rounded-2xl mt-[20px]">
+      <img src="images/windmills.jpg" class="rounded-2xl h-96 w-full object-cover" />
+    </div>
+
+    <div
+      class="bg-[#C6ED94] h-[350px] md:w-[600px] rounded-2xl absolute md:right-[50px] bottom-[-45px] flex flex-col justify-center items-center">
+      <img src="" />
+      <h2 class="md:text-[40px] text-[21px] font-[400] w-[90%] flex justify-center items-center mt-[20px]">
+        Make a Difference: Embrace Solutions, Fight Against Pollution
+      </h2>
+
+      <div class="flex w-[90%] mt-[30px]">
+        <button class="rounded-full py-[8px] px-[18px] bg-black text-[#B5E775] hover:">
+          Work with us
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-white mt-3 md:h-[350px] grid md:grid-cols-2 grid-cols-1 rounded-[14px]">
+    <div class="custom-container flex flex-col gap-7 justify-center mt-[60px!important] p-[27px] sm:p-[27PX]">
+      <ul class="flex items-center gap-3">
+        <img src="images/logo.png" class="w-7" />
+        <p>Lofi</p>
+      </ul>
+      <ul>
+        <p class="md:w-[64%] w-full text-stone-500">
+          We make onboarding new employees ridicuiously easy. On day one,
+          they're raedy to go. And retaining them is easier.
+        </p>
+      </ul>
+
+      <ul class="flex md:gap-4 items-center">
+        <li class="text-stone-500">Follow us on:</li>
+        <li class="cursor-pointer mr-2 ml-2">
+          <img src="images/linkedin.png" class="w-[18px] flex" />
+        </li>
+        <li class="cursor-pointer mr-2">
+          <img src="images/instagram.png" class="w-[18px] flex" />
+        </li>
+        <li class="cursor-pointer mr-2">
+          <img src="images/youtube.png" class="w-[18px] flex" />
+        </li>
+        <li class="cursor-pointer">
+          <img src="images/facebook-app-symbol.png" class="w-[18px] flex" />
+        </li>
+      </ul>
+    </div>
+    <div class="md:flex md:items-center md:justify-center md:gap-[130px] gap-[50px] custom-container">
+      <ul class="font-[600] grid md:grid-cols-3 lg:gap-x-24 md:gap-x-19 gap-y-3 px-[27px]">
+        <li class="cursor-pointer hover:underline">Home</li>
+        <li class="cursor-pointer hover:underline">Service</li>
+        <li class="cursor-pointer hover:underline">Testimonial</li>
+        <li class="cursor-pointer hover:underline">Why Us</li>
+        <li class="cursor-pointer hover:underline">Case Studies</li>
+        <li class="cursor-pointer hover:underline">About</li>
+        <li class="cursor-pointer hover:underline">Deals</li>
+        <li class="cursor-pointer hover:underline">Plan</li>
+        <li class="cursor-pointer hover:underline">FAQ</li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

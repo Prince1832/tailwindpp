@@ -1,0 +1,45 @@
+.custom-container {
+  width: 80%;
+  margin: 0px auto !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.transition-all {
+  transition: max-height 0.3s ease;
+}
+#menu{
+ transition: all 1.5s ease-in-out !important;
+ 
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  .side-section {
+    display: flex;
+    gap: 60px;
+  }
+
+  .side-section1,
+  .side-section2,
+  .side-section3 {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+  }
+  .side-section1 p:nth-child(1),
+  .side-section2 p:nth-child(1),
+  .side-section3 p:nth-child(1) {
+    font-size: 25px;
+  }
+
+  .side-section1 p {
+    font-size: 16px;
+  }
+
+  .side-section2 p,
+  .side-section3 p {
+    font-size: 16px;
+  }
+}
